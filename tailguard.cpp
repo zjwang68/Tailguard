@@ -22,8 +22,8 @@ int main(int argc, char** argv)
     double ATime[NQ],JFTime[NQ];  // Atime record the job arrival and JTime record the query completion time
     ifstream inf1, inf2;
 	
-    inf1.open("/RUT_Mastree_DV");         //Load the unloaded tail latency file
-    inf2.open("/Mastree_cdf");
+    inf1.open("RUT_Mastree");         //Load the unloaded tail latency file
+    inf2.open("Mastree_cdf");
     for(i=0;i<FAN; i++){ inf1>>xx; ULTAIL[i]=xx; }    //ULTAIL stores the unloaded query tail latency for query with fanout i+1 (measured from simulation or real system)
     for(i=0;i<TN;i++) { inf2>>xx; TASK_CDF[i]=xx; }   //CDF of task service time, measured from task serivce samples
 
